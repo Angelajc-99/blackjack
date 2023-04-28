@@ -37,6 +37,7 @@ const btnPedir = document.getElementById('btn-pedir');
 const btnPlantarse = document.getElementById('btn-plantarse');
 const reset = document.getElementById('reset');
 const btnApostar = document.getElementById('btn-apostar');
+const cash = document.querySelector('.cash');
 
 // Ponemos un identificador para las apuestas
 let monedasJugador = [];
@@ -76,10 +77,11 @@ function empezar() {
     // Botones los cuales se ocultan o se muestarn según el display que le ponemos
     cotent.style.display = "flex"
     tabContent.style.display = "flex"
-    btnApostar.style.display = "none"
+    btnApostar.style.display = "block"
     btnPlantarse.style.display = "flex"
     reset.style.display = "flex"
     btnPedir.style.display = "flex"
+    cash.style.display = "flex"
     manoCasa.classList.add('cartaOculta');
     manoJugador.classList.add('cartaOculta');
 
@@ -174,7 +176,7 @@ function calcularPuntos() {
 
     ganador();
 }
-
+// 
 
 // Función de mostrar cartas
 // Aquí creas las cartas

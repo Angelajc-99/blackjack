@@ -34,8 +34,8 @@ h1 {
     padding: 50px;
     display: flex;
 
-    height: 90vh;
-    width: 50vw;
+    height: 93vh;
+    width: 55vw;
     margin: 0;
 
     box-shadow: 6px 6px 26px -1px  rgb(36 169 191);
@@ -67,6 +67,7 @@ h1 {
 .controls {
     display: flex;
     justify-content: space-between;
+    padding: 2rem;
 }
 .controls #reset {
     display: none;
@@ -166,9 +167,18 @@ margin-bottom: 10px;    transition: all .5s;
 .cotent{
     display: block;
     margin: -232px;
-    padding: 198px;
+    padding: 181px;
     flex-direction: column;
+    padding-top: 2rem;
 }
- span#coin {
-    width: 15px;
+
+ .cash {
+    justify-content: space-between;
+    display: none;
+    ;
+ }
+
+ .content_cash{
+    display: flex;
+    justify-content: space-between;
  }
