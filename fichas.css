@@ -1,0 +1,37 @@
+
+.apuestas {
+
+    justify-content: center;
+    gap: 50px;
+    font-size: 40px;
+
+    display: none;
+    align-items: center;
+    padding: 50px;
+
+
+}
+
+.apuestas div div{
+    background-image: url("https://tse2.mm.bing.net/th?id=OIP._uPEWaqQfG55acBrfO52LQHaHa&pid=Api&P=0");
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 200px 200px 200px 200px;
+    background-color: rgb(76, 115, 194);
+    box-shadow: 0 5px 26px -1px  rgb(36 169 191);
+    height: 60px;
+    width: 60px;
+    z-index: 1;
+}
+.apuestas i{
+    position: absolute;
+    opacity: 0.;
+    font-size: 60px;
+}
+
+
+
+

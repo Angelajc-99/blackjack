@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Cousine&family=Rubik&display=swap');
+
+/* Una forma de hacer las cartas */
+/* https://programmerclick.com/article/72971384876/  */
+
+
+
+:root {
+    --tiempo-anim: 3s;
+    --palo-negro: #069FC5;
+    --palo-rojo: #c52c06;
+} 
+.cartas-mesa {
+    display: flex;
+    justify-content: center;
+    transition: all 1s;
+    /* flex-wrap: wrap; */
+}
+.cartaOculta{
+    transform: translateX(-100px);
+    opacity: 0;
+}
+span#mano-casa {
+    color: var(--palo-rojo);
+    text-shadow: 0 0 3px var(--palo-rojo);
+}
+span#mano-jugador {
+    color: var(--palo-negro);
+    text-shadow: 0 0 3px var(--palo-negro);
+}
+.carta {
+    /* background: #e2e2e9; */
+    height: 90px;
+    width: 60px;
+    min-width: 60px;
+    box-shadow: rgb(21, 139, 160);
+    border: 1px solid rgb(97, 105, 110);
+
+    border-radius: 5px;
+    
+    margin: 5px;
+    padding: 3px;
+
+    /* perspective: 500px; */
+
+    position: relative;
+
+    left: 0px;
+    order: 0;
+
+    transition: all 1.5s;
+}
+
+
+
+.carta .carta-contenedor {
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform .5s;
+    transform-style: preserve-3d;
+}
+
+.carta:hover .carta-contenedor {
+    transform: rotateY(180deg);
+    animation: girar 2s linear infinite;
+}
+
+.carta * {
+    text-shadow: 0 0 8px 3;
+}
+.frontal, .trasera {
+    /* background: #5b2424cc; */
+    border-radius: 2.5px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* -webkit-backface-visibility: hidden; */
+    backface-visibility: hidden;
+}
+.visible {
+    display: block !important;
+}
+.trasera, .voltear {
+    /* display: block !important; */
+    transform: rotateY(180deg);
+}
+.oculta {
+    display: none !important;
+}
+.carta-negra {
+    color: var(--palo-negro);
+    text-shadow: 0 0 15px var(--palo-negro);
+    border: 1px solid var(--palo-negro);
+    box-shadow: 0 0 2px 2px var(--palo-negro);
+
+}
+.carta-roja {
+    color: #0f1213;
+
+    color: var(--palo-rojo);
+}
+.carta .num {
+    font-family: 'Cousine', monospace;
+    /* font-family: 'Rubik', sans-serif; */
+    position: absolute;
+    margin: 0 2px;
+    font-size: 1.3rem;
+}
+
+.carta .num.bot {
+    bottom: 0;
+    right: 0;
+    transform: rotateZ(180deg);
+}
+.carta .palo {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.4rem;
+}
+#mano-casa .carta .carta-contenedor {
+    border: 1px solid var(--palo-rojo);
+    box-shadow: 0 0 5px 2px var(--palo-rojo);
+}
+
+/*  alto y ancho de la imagen*/
+.carta img {
+    width: 66px;
+    height: 96px;
+    border-radius: 7px;
+    justify-content: center;
+    display: flex;
+    object-fit: cover;
+} 
+.duda, 
+#mano-casa .duda {
+    color: #eff;
+    text-shadow: 0 0 3px #eff;
+    transform-origin: center center;
+    transition: all .4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ #mano-jugador .carta .carta-contenedor {
+    border: 1px solid var(--palo-negro);
+    box-shadow: 0 0 2px 2px var(--palo-negro);
+} 
