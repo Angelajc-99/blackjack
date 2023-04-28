@@ -1,7 +1,8 @@
-
+/* Tipo de letra */
 @import url('https://fonts.googleapis.com/css2?family=Cousine&family=Rubik&display=swap');
 
 * {
+    padding: 0;
     box-sizing: border-box;
 }
 body {
@@ -12,14 +13,13 @@ body {
     background-size: cover; 
     background-position: center; 
 
-    object-fit: 5px;
-
     display: flex;
     justify-content: center;
     align-items: center;
 
     height: 100vh;
     margin: 0;
+    padding: 0;
 }
 h1 {
     color: rgb(36 169 191);
@@ -30,16 +30,15 @@ h1 {
 }
 
 .contenedor {
-
-    padding: 50px;
+    padding: 40px;
     display: flex;
 
     height: 93vh;
-    width: 55vw;
+    width: 65vw;
     margin: 0;
 
     box-shadow: 6px 6px 26px -1px  rgb(36 169 191);
-    border-radius: 120px;
+    border-radius: 159px;
 
     flex-direction: column;
     justify-content: center;
@@ -48,22 +47,25 @@ h1 {
     font-size: 20px;
     user-select: none;
     position: relative;
-    
 } 
-
-
+/* estilo de todo el contenido */
+.cotent{
+    margin: -232px;
+    padding: 181px;
+    flex-direction: column;
+    padding-top: 9rem;
+}
+/* Estilo del contenido */
 #tab {
-    /* display: flex; */
     justify-content: space-between;
     display: none;
-    /* height: 50%; */
-    width: 50%;
     min-width: 455px;
 }
 #tab > div {
     margin: 25px;
 }
 
+/* Estilo de todos los controles (botones)*/
 .controls {
     display: flex;
     justify-content: space-between;
@@ -85,28 +87,24 @@ h1 {
     border-radius: 21px;
     border: none;
     transition: all .7s;
-    padding: 10px;
-    margin: 20px;
+    padding: 15px;
+    margin: 25px;
 }
 .controls button:hover {
     box-shadow: 20px 19px 60px -7px rgb(6, 183, 214);
     cursor: pointer;
     font-size: 15px;
 }
-#cont-baraja {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-}
 
 button {
-    height: 6vh;
-    width: 8vw;
+    height: 10vh;
+    width: 12vw;
     font-family: Georgia, 'Times New Roman', Times, serif;
     justify-content: center;
     font-size: 18px;
     font-weight: bold;
 }
+/* Estilo de los párrafos */
 p {
     color: #66adf7;
     font-size: 24px;
@@ -116,6 +114,7 @@ p span {
     display: flex;
     justify-content: start;
     font-family: 'Courgette', cursive;
+    font-size: 20px;
 }
 p span div {
     font-family: 'Sassy Frass', cursive;
@@ -126,14 +125,16 @@ p#resultado {
     color: #909cb1;
     font-family: 'cursive';
     font-weight: bold;
+    text-align: center;
     font-size: 22px;
 
     box-shadow: inset 4px 4px 25px -1px rgb(36 169 191);
     border-radius: 7px;
-    max-width: 260vh;
+    max-width: 240vh;
 
-margin-bottom: 10px;    transition: all .5s;
+    margin-bottom: -27px;   
 }
+/* estilo del boto´n apostar */
 #btn-apostar {
     display: none;
     height: 6vh;
@@ -150,10 +151,6 @@ margin-bottom: 10px;    transition: all .5s;
     border-radius: 21px;
     border: none;
 
-    transition: all .7s;
-
-    padding: 10px;
-    margin: 20px;
 }
 
 #btn-apostar:hover {
@@ -163,22 +160,14 @@ margin-bottom: 10px;    transition: all .5s;
 }
 
 
-
-.cotent{
-    display: block;
-    margin: -232px;
-    padding: 181px;
-    flex-direction: column;
-    padding-top: 2rem;
-}
-
+/* oculta las monedas de la página principal */
  .cash {
-    justify-content: space-between;
     display: none;
-    ;
  }
 
  .content_cash{
     display: flex;
     justify-content: space-between;
+    font-size: 15px;
+
  }

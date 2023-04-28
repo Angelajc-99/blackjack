@@ -1,7 +1,7 @@
 
 // Iconos e imagen de las cartas
-let iconoDuda = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-tPBbSLcRO8Sm7CtdMhObCGBTD9_iX4PcbrIGVtZy2uuEW6HKmUQuWcj0tIdjyI4IboE&usqp=CAU">`;
-let iconoPicas = `<i class="bi bi-suit-spade-fill"></i>`;
+let iconoDuda = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxgPFS1JW6K5_MUT7vc01D9GDMwRhhquSARA&usqp=CAU">`;
+let iconoPicas = `<i class="bi bi-suit-spade"></i>`;
 let iconoCorazones = `<i class="bi bi-suit-heart"></i></i>`;
 // Array para el valor de las monedas de apuestas
 let coins = [10, 25, 50, 100];
@@ -102,16 +102,16 @@ function activarBotones() {
     btnPedir.style['opacity'] = 1;
     btnPlantarse.style['pointer-events'] = 'auto';
     btnPlantarse.style['opacity'] = 1;
-    apuestas.style['pointer-events'] = 'auto';
-    apuestas.style['opacity'] = 1;
+    // apuestas.style['pointer-events'] = 'auto';
+    // apuestas.style['opacity'] = 1;
 }
 function desactivarBotones() {
     btnPedir.style['pointer-events'] = 'none';
     btnPedir.style['opacity'] = 0.7;
     btnPlantarse.style['pointer-events'] = 'none';
     btnPlantarse.style['opacity'] = 0.7;
-    apuestas.style['pointer-events'] = 'none';
-    apuestas.style['opacity'] = 0.7;
+    // apuestas.style['pointer-events'] = 'none';
+    // apuestas.style['opacity'] = 0.7;
 }
 
 // Le damos la función a calcularPuntos el cual le dará el número y las letras a las cartas, seguido creamos un switch el cual le dará el valor si se cumple la condición 
@@ -176,10 +176,10 @@ function calcularPuntos() {
 
     ganador();
 }
-// 
+
 
 // Función de mostrar cartas
-// Aquí creas las cartas
+// Aquí creas las cartas para el jugador y la mesa
 function mostrarCartas() {
     manoCasa.innerHTML = '';
     manoJugador.innerHTML = '';
@@ -231,6 +231,7 @@ function ganador() {
             console.log("default switch 1");
             break;
     }
+    // si se cumple esta función se bloquean los botones
     desactivarBotones();
 
 
@@ -252,7 +253,7 @@ function ganador() {
             total -= valorApuesta;
             break;
             
-// jugador
+        // jugador
         case (puntosCasa != 21 && puntosJugador === 21):
             resultado.innerHTML = "Has ganado!"
             total += valorApuesta * 2;
@@ -260,6 +261,7 @@ function ganador() {
         case puntosCasa > 21:
             resultado.innerHTML = "La casa se ha pasado de 21. Gana el jugador."
             total += valorApuesta;
+            desactivarBotones();
             
             break;
             
@@ -272,7 +274,7 @@ function ganador() {
     // Para vaciar la apuesta le ponemos comillas simples
     apuestaDisplay.innerHTML = '';
     // Para que imprima el valor en pantalla
-    totalDisplay.innerHTML = total + "€";
+    totalDisplay.innerHTML =  'Saldo: ' + total + " € ";
 
 }
 //  Esta función le da las cartas al jugador en cada juego
@@ -308,18 +310,19 @@ function plantarse() {
 
 }
 
-//  
+// Es la función en la cual empiezas a jugar
 function jugar() {
     empezar();
+    
     btnIniciar.style.display = "none"
     apuestas.style.display = "flex";
-    btnApostar.style.display = "flex";
+    btnApostar.style.display = "none";
 
     controls.style.display = "none";
-    // empezar();
 }
 
 function playagain() {
+    location.reload(true);
     empezar();
 }
 
@@ -350,12 +353,9 @@ function mostrarMonedas() {
             <div class="${style_coins}" onclick="apostar(${coin})">${coin}€</div>
         </div>        
        `
-
     })
 
     apuestas.innerHTML = data.join('')
-
-
 }
 
 mostrarMonedas();
@@ -363,7 +363,7 @@ let total = 1000;
 // le damos que el valor comience con 0
 let valorApuesta = 0;
 let totalDisplay = document.getElementById("total");
-totalDisplay.innerHTML = total + "€";
+totalDisplay.innerHTML = "Saldo: " + total + "€";
 let apuestaDisplay = document.querySelector('#coin');
 function apostar(coin) {
     monedasJugador = [];
@@ -382,9 +382,9 @@ function apostar(coin) {
     }
     console.log(total);
     console.log(valorApuesta);
-    apuestaDisplay.innerHTML = valorApuesta + " €";
+    apuestaDisplay.innerHTML = "Tu apuesta es de: " + valorApuesta + " €";
 
-    totalDisplay.innerHTML = total - valorApuesta + "€";
+    totalDisplay.innerHTML = total - valorApuesta + " € " + ' Saldo: ';
 
 }
 
